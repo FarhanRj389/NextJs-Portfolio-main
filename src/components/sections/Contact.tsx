@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Mail, Phone, Send } from 'lucide-react';
-import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -18,30 +17,35 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      subject: formData.subject,
-      message: formData.message
-    };
+    try {
+      const response = await fetch('http://localhost:3001/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    emailjs
-      .send('service_0u0r2ca', 'template_zdmax5e', templateParams, 'EFUWtosgHe1zJ8Yr0')
-      .then(() => {
+      const data = await response.json();
+
+      if (data.success) {
         setIsSubmitting(false);
         setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
         setTimeout(() => setSubmitStatus('idle'), 5000);
-      })
-      .catch(() => {
-        setIsSubmitting(false);
-        setSubmitStatus('error');
-        setTimeout(() => setSubmitStatus('idle'), 5000);
-      });
+      } else {
+        throw new Error(data.message || 'Failed to send email');
+      }
+    } catch (error) {
+      console.error('Email sending error:', error);
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    }
   };
 
   return (
@@ -74,10 +78,10 @@ const Contact: React.FC = () => {
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Email</p>
                     <a
-                      href="mailto:farhanrjcw389@gmail.com"
+                      href="mailto:contact@farhanahmed.top"
                       className="text-gray-900 dark:text-white hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                     >
-                      farhanrjcw389@gmail.com
+                      contact@farhanahmed.top
                     </a>
                   </div>
                 </div>

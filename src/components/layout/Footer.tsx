@@ -125,10 +125,10 @@ const Footer: React.FC = () => {
               <li className="text-gray-600 dark:text-gray-400">
                 <span className="font-medium">Email:</span>{' '}
                 <a 
-                  href="mailto:farhanrjcw389@gmail.com" 
+                  href="mailto:contact@farhanahmed.top" 
                   className="hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                 >
-                  farhanrjcw389@gmail.com
+                  contact@farhanahmed.top
                 </a>
               </li>
               <li className="text-gray-600 dark:text-gray-400">
