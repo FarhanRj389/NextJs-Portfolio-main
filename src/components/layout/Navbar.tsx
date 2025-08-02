@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface NavbarProps {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
+  onNavClick?: (section: string) => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
+const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode, onNavClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -27,9 +29,13 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
   const scrollToSection = (sectionId: string) => {
     setIsMenuOpen(false);
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+    if (onNavClick) {
+      onNavClick(sectionId);
+    } else {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -45,7 +51,10 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-blue-600 dark:from-teal-400 dark:to-blue-500">
-            Farhan Ahmed
+            <Link to="/" className="flex items-center gap-2">
+              <img src="/Design Agency Logo Featuring 'FA'.png" alt="Farhan Ahmed" className="w-10 h-10 rounded-full" />
+              <span>Farhan Ahmed</span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -68,6 +77,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
             >
               Work
             </button>
+            <Link 
+              to="/all-projects"
+              className="text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
+            >
+              All Projects
+            </Link>
             <button 
               onClick={() => scrollToSection('about')}
               className="text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
@@ -130,6 +145,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
               >
                 Work
               </button>
+              <Link 
+                to="/all-projects"
+                className="py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
+              >
+                All Projects
+              </Link>
               <button 
                 onClick={() => scrollToSection('about')}
                 className="py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"

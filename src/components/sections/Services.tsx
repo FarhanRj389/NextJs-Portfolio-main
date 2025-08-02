@@ -7,32 +7,32 @@ const Services: React.FC = () => {
     {
       icon: <Code size={32} />,
       title: "Web Development",
-      description: "Custom websites and web applications built with modern technologies and best practices.",
+      description: "We craft responsive, fast-loading websites using HTML, CSS, JS, React, and Next.js. From landing pages to Shopify and WordPress customization, we deliver sleek, modern, and scalable solutions.",
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: <Palette size={32} />,
       title: "Graphic Design",
-      description: "Creative logo design, branding, and visual content that aligns with your brand identity.",
+      description: "Get impactful visual design for logos, branding, and social media. We create clean, modern graphics tailored to your brand, helping you stand out across platforms and marketing materials.",
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: <Globe size={32} />,
       title: "Mobile & Web Apps",
-      description: "Cross-platform applications that work seamlessly across web and mobile devices.",
+      description: "We develop user-friendly mobile and web apps using React Native and modern stacks. All apps are optimized for performance, responsive design, and seamless cross-platform experience.",
       color: "from-teal-500 to-teal-600"
     },
     {
       icon: <LineChart size={32} />,
       title: "SEO & Marketing",
-      description: "Digital marketing strategies to boost your online visibility and reach your target audience.",
+      description: "Improve your online presence with on-page SEO, keyword strategy, and digital marketing. We also offer email marketing and content-based promotion to boost reach and engagement.",
       color: "from-orange-500 to-orange-600"
     }
   ];
 
   return (
     <section id="services" className="py-20 px-4 bg-white dark:bg-gray-900">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <p className="inline-block text-sm font-medium text-teal-500 dark:text-teal-400 mb-4 px-4 py-1.5 rounded-full bg-teal-50 dark:bg-teal-900/30">
             What I Do

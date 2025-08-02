@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import Services from './components/sections/Services';
@@ -14,6 +14,20 @@ import './styles/animations.css';
 
 function App() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Handle scroll to section when coming from other pages
+    if (location.state?.scrollTo) {
+      const sectionId = location.state.scrollTo;
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <div className={`${isDarkMode ? 'dark' : ''}`}>

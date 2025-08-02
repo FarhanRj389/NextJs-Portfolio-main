@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -8,9 +9,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-blue-600 dark:from-teal-400 dark:to-blue-500 mb-4">
-              Farhan Ahmed
-            </div>
+          <div className="text-2xl font-bold pb-3 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-blue-600 dark:from-teal-400 dark:to-blue-500">
+            <Link to="/" className="flex items-center gap-2">
+              <img src="/Design Agency Logo Featuring 'FA'.png" alt="Farhan Ahmed" className="w-10 h-10 rounded-full" />
+              <span>Farhan Ahmed</span>
+            </Link>
+          </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md">
               Building beautiful digital experiences that help businesses grow online. Let's create something amazing together.
             </p>

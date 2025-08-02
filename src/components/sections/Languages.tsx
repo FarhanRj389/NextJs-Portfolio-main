@@ -11,6 +11,11 @@ const Languages: React.FC = () => {
       color: 'from-yellow-400 to-yellow-500'
     },
     {
+      name: 'TypeScript',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+      color: 'from-blue-600 to-blue-700'
+    },
+    {
       name: 'C#',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
       color: 'from-violet-500 to-white'
@@ -19,6 +24,11 @@ const Languages: React.FC = () => {
       name: 'Kotlin',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg',
       color: 'from-pink-500 to-white'
+    },
+    {
+      name: 'Flutter',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
+      color: 'from-blue-200 to-white'
     },
     {
       name: 'React',
@@ -38,33 +48,37 @@ const Languages: React.FC = () => {
      {
       name: 'Vite',
       icon: 'https://raw.githubusercontent.com/vitejs/vite/main/docs/public/logo.svg',
-      color: 'from-blue-200 to-yellow-500'
+      color: ' from-blue-200 to-yellow-500'
     },
     {
       name: 'Node.js',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
       color: 'from-green-500 to-green-600'
     },
-    
+    {
+      name: 'Android Studio',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg',
+      color: 'from-green-500 to-green-600'
+    },
     {
       name: 'WordPress',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg',
-      color: 'from-white to-white'
+      color: 'from-blue-400 to-white'
     },
     {
       name: 'Google Ads',
       icon: 'https://www.vectorlogo.zone/logos/google_ads/google_ads-icon.svg',
-      color: 'from-white to-white'
+      color: 'from-yellow-200 to-white'
     },
     {
       name: 'Facebook Ads(Meta)',
       icon: 'https://www.vectorlogo.zone/logos/facebook/facebook-icon.svg',
-      color: 'from-white to-white'
+      color: 'from-cyan-200 to-white'
     },
      {
       name: 'Canva',
       icon: 'https://www.vectorlogo.zone/logos/canva/canva-icon.svg',
-      color: 'from-white to-white'
+      color: 'from-gray-600 to-white'
     },
   ];
 
