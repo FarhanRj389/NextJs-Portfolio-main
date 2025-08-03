@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="text-xl md:text-xl font-light mb-8 text-gray-600 dark:text-gray-400 max-w-4xl mx-auto animate-slideRight">
-            Transforming ideas into pixel-perfect digital experiences with 1.5+ years of expertise in React.js, Next.js, WordPress and Shopify development, delivering responsive websites that drive business growth through custom theme development, eCommerce optimization, and seamless user experiences.
+            Transforming ideas into pixel-perfect digital experiences with 4+ years of expertise in React.js, Next.js, WordPress and Shopify development, delivering responsive websites that drive business growth through custom theme development, eCommerce optimization, and seamless user experiences.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center stagger-animation animate mb-8">
