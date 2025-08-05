@@ -106,6 +106,18 @@
   100% { background-position: 0% 50%; }
 }
 
+/* Horizontal gradient animation for Spotlight Projects text */
+.animate-gradient-x {
+  background-size: 200% 100%;
+  animation: gradientMoveX 4s ease-in-out infinite;
+}
+
+@keyframes gradientMoveX {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
