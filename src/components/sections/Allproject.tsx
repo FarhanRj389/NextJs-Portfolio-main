@@ -53,18 +53,18 @@ const AllProjects = () => {
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} onNavClick={handleNavClick} />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900">
+      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-white to-gray-100  dark:from-gray-900 dark:to-gray-800">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 text-sm font-medium text-yellow-400 mb-6 px-4 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/20">
+            <div className="inline-flex items-center gap-2 text-sm font-medium dark:text-orange-400 text-cyan-600 mb-6 px-4 py-2 rounded-full  dark:bg-white  border border-cyan-600 dark:border-orange-400">
               <Star size={16} />
               Featured Case Studies
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent animate-gradient-x">
+              <span className="bg-gradient-to-r from-yellow-500 via-cyan-400 to-cyan-700 dark:from-cyan-200 dark:via-cyan-400 dark:to-cyan-700  bg-clip-text text-transparent animate-gradient-x">
                 Spotlight Projects
               </span>{" "}
-              <span className="text-white">That Changed</span>{" "}
+              <span className="text-slate-500 dark:text-white">That Changed</span>{" "}
               <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent animate-gradient-x">
                 Everything
               </span>
@@ -119,21 +119,27 @@ const AllProjects = () => {
 
       {/* Projects Section */}
       <section className="py-16 px-8 bg-gray-50 dark:bg-gray-800">
-        <div className="mx-auto max-w-full">
+        <div className="mx-auto max-w-full ">
           {filteredProjects.length > 0 ? (
             <div className="space-y-12">
               {filteredProjects.map((project, index) => (
-                <div key={index} className={`bg-white dark:bg-gray-700 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-600 w-full ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}>
-                  <div className="flex flex-col lg:flex-row h-auto lg:h-[500px]">
+               <div key={index} className="bg-white dark:bg-gray-700 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-600 w-full">
+  <div className={`flex flex-col lg:flex-row ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} h-auto lg:h-[500px]`}>
                     {/* Project Image */}
-                    <div className="w-full lg:w-1/2 relative">
+                    <div className="w-full lg:w-1/2 relative border border-yellow-500 border-4">
                       <div className="relative group overflow-hidden h-80 lg:h-full">
+                        <div className=" items-center flex absolute top-2 px-4 justify-between w-full">
+                          <span className={`px-4 py-2 rounded-full text-xs font-semibold text-white shadow-lg ${getCategoryColor(project.category)}`}>
+                            {project.category.replace('-', ' ').toUpperCase()}
+                          </span>
+                          <span className="px-3 py-2 rounded-full text-xs font-semibold text-yellow-400 bg-black border border-yellow-500 shadow-lg">
+                            Featured
+                          </span>
+                        </div>
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-fill object-center transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-full object-fill object-center  transition-transform duration-500 group-hover:scale-105"
                         />
                         {/* Attractive Border Overlay */}
                         {/* <div className="absolute inset-0 border-2 overflow-hidden border-yellow-400/40 rounded-2xl pointer-events-none"></div> */}
@@ -162,14 +168,7 @@ const AllProjects = () => {
                     <div className="w-full lg:w-1/2 p-8 lg:p-10 flex flex-col justify-center">
                       <div className="space-y-6">
                         {/* Category Badges - Moved to Content Section */}
-                        <div className="flex items-center gap-3">
-                          <span className={`px-3 py-1 rounded-full text-xs font-semibold text-white shadow-lg ${getCategoryColor(project.category)}`}>
-                            {project.category.replace('-', ' ').toUpperCase()}
-                          </span>
-                          <span className="px-3 py-1 rounded-full text-xs font-semibold text-yellow-400 bg-yellow-400/20 border border-yellow-400/30 shadow-lg">
-                            Featured
-                          </span>
-                        </div>
+                        
 
                         <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white leading-tight">
                           {project.title}
