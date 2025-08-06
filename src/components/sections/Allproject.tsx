@@ -202,18 +202,12 @@ const AllProjects: React.FC<AllProjectsProps> = ({ isDarkMode, toggleDarkMode })
                         <div>
                           <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Key Results</h4>
                           <ul className="space-y-1">
-                            <li className="flex items-center gap-2 text-green-600 dark:text-green-400 text-xs">
-                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                              <span>Increased online presence and engagement</span>
-                            </li>
-                            <li className="flex items-center gap-2 text-green-600 dark:text-green-400 text-xs">
-                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                              <span>Optimized for mobile and desktop performance</span>
-                            </li>
-                            <li className="flex items-center gap-2 text-green-600 dark:text-green-400 text-xs">
-                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                              <span>Fast loading and clean user experience</span>
-                            </li>
+                            {project.keyresult && project.keyresult.map((result, resultIndex) => (
+                              <li key={resultIndex} className="flex items-center gap-2 text-green-600 dark:text-green-400 text-xs">
+                                <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>{result}</span>
+                              </li>
+                            ))}
                           </ul>
                         </div>
 

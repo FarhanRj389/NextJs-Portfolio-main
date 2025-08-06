@@ -49,9 +49,9 @@ function App() {
               }
             />
             <Route
-  path="/all-projects"
-  element={<AllProjects isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />}
-/>
+              path="/all-projects"
+              element={<AllProjects isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />}
+            />
           </Routes>
         </main>
         <Footer />
