@@ -1,15 +1,20 @@
 
 // import React from 'react';
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { projects, ProjectCategory } from "../../data/projects";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Star, ExternalLink, Github } from "lucide-react";
+import { Star, ExternalLink,  } from "lucide-react";
 import Navbar from "../layout/Navbar";
-import { useDarkMode } from "../../hooks/useDarkMode";
 
-const AllProjects = () => {
+
+// Props interface should be outside the component
+interface AllProjectsProps {
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+}
+
+const AllProjects: React.FC<AllProjectsProps> = ({ isDarkMode, toggleDarkMode }) => {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory | "all">("all");
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
   const navigate = useNavigate();
 
   const categories: { id: ProjectCategory | "all"; label: string; count: number }[] = [
@@ -126,7 +131,7 @@ const AllProjects = () => {
                <div key={index} className="bg-white dark:bg-gray-700 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-600 w-full">
   <div className={`flex flex-col lg:flex-row ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} h-auto lg:h-[500px]`}>
                     {/* Project Image */}
-                    <div className="w-full lg:w-1/2 relative border border-yellow-500 border-4">
+                    <div className="w-full lg:w-1/2 relative border-yellow-500 border-4">
                       <div className="relative group overflow-hidden h-80 lg:h-full">
                         <div className=" items-center flex absolute top-2 px-4 justify-between w-full">
                           <span className={`px-4 py-2 rounded-full text-xs font-semibold text-white shadow-lg ${getCategoryColor(project.category)}`}>
