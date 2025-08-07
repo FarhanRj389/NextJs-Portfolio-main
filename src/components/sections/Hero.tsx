@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
             </button>
             <button 
               onClick={downloadCV}
-              className="button-hover px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center gap-2"
+              className="button-hover  justify-center md:px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center gap-2"
               aria-label="Download CV"
             >
               <Download size={20} />

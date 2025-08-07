@@ -77,6 +77,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode, onNavClick 
             >
               Work
             </button>
+
+            
             <Link 
               to="/all-projects"
               className="text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors font-medium"
@@ -147,7 +149,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode, onNavClick 
               </button>
               <Link 
                 to="/all-projects"
-                className="py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors font-medium"
+                className="py-2 px-4 text-center text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors font-medium"
               >
                 All Projects
               </Link>

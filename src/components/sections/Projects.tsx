@@ -1,26 +1,12 @@
 import React, { useState } from "react";
 import ProjectCard from "../ui/ProjectCard";
-import { projects, ProjectCategory } from "../../data/projects";
+import { projects } from "../../data/projects";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Projects: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<ProjectCategory | "all">("all");
 
-  const categories: { id: ProjectCategory | "all"; label: string }[] = [
-    { id: "all", label: "All Projects" },
-    { id: "web-development", label: "Web Development" },
-    { id: "wordpress", label: "WordPress" },
-    { id: "business", label: "Business" },
-    { id: "health", label: "Health" },
-    { id: "services", label: "Services" },
-    { id: "ecommerce", label: "Ecommerce" },
-  ];
 
-  const filteredProjects =
-    activeFilter === "all"
-      ? projects
-      : projects.filter((project) => project.category === activeFilter);
 
   // Group projects by category for sliders
   const webDevelopmentProjects = projects.filter(p => p.category === "web-development");
@@ -28,7 +14,6 @@ const Projects: React.FC = () => {
   const ecommerceProjects = projects.filter(p => p.category === "ecommerce");
 
   // Slider state
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [webSlide, setWebSlide] = useState(0);
   const [wpSlide, setWpSlide] = useState(0);
   const [ecommerceSlide, setEcommerceSlide] = useState(0);
@@ -43,7 +28,7 @@ const Projects: React.FC = () => {
 
   return (
     <section id="work" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-full ">
         <div className="text-center mb-16">
           <p className="inline-block text-sm font-medium text-teal-500 dark:text-teal-400 mb-4 px-4 py-1.5 rounded-full bg-teal-50 dark:bg-teal-900/30">
             My Portfolio
